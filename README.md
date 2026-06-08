@@ -1,4 +1,4 @@
-# MemoryOS
+# MemoryOS — Beta
 
 Local-first macOS storage intelligence. Scans your Mac, classifies storage usage, finds duplicate files, surfaces cleanup recommendations, and includes an AI assistant that understands your entire Mac.
 
@@ -26,7 +26,7 @@ Local-first macOS storage intelligence. Scans your Mac, classifies storage usage
 ## How to Use
 
 ### 1. Scan a folder
-Type a folder path in the top bar or click **Browse**. Start with your home folder (`/Users/yourname`) for the full picture.
+Type a folder path in the top bar or click **Browse**. Start with your home folder (`/Users/yourname`) for the full picture. Large folders take a moment — the scan runs in the background.
 
 ### 2. Dashboard
 - Storage breakdown by category
@@ -35,17 +35,19 @@ Type a folder path in the top bar or click **Browse**. Start with your home fold
 - Cleanup recommendations with risk levels (Safe / Review / Caution)
 
 ### 3. Duplicates
-Lists every group of identical files. Trash individual files — sent to Trash, not permanent delete.
+Lists every group of identical files found in your scan. Trash individual files — they go to Trash, not permanent delete.
 
 ### 4. System Data
-Shows `~/Library` usage: caches, logs, containers, app support, Messages attachments, apps unused for over a year.
+Shows what's inside `~/Library`: caches, logs, containers, app support, Messages attachments, and apps you haven't opened in over a year.
 
 ### 5. AI Chat
-Ask anything about your storage:
+Ask anything about your storage in plain English:
 - *"What's taking up the most space?"*
 - *"Do I have large video files in Downloads?"*
 - *"Where are my iPhone backups?"*
 - *"Is it safe to delete Xcode DerivedData?"*
+
+The AI can search file contents (PDFs, Word docs, PowerPoints) and knows common Mac locations like Docker images, npm cache, and Xcode build artifacts.
 
 ---
 
@@ -53,4 +55,15 @@ Ask anything about your storage:
 
 - Runs entirely on your Mac — no account, no cloud sync
 - Scan data stored locally in `~/Library/Application Support/MemoryOS/`
-- AI responses use OpenAI — only category totals and folder sizes are sent, never file contents or full paths
+- AI responses use OpenAI — only category totals and folder sizes are sent, never file paths or file contents
+
+---
+
+## Feedback
+
+This is a beta — bugs and rough edges are expected. If something breaks or feels off, reach out directly with:
+- What you were doing
+- What happened vs. what you expected
+- Your macOS version (Apple menu → About This Mac)
+
+Thanks for testing!
