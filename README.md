@@ -19,28 +19,36 @@ Local-first macOS storage intelligence. Scans your Mac, classifies storage usage
 3. Drag **MemoryOS** into your Applications folder
 4. Launch from Applications or Spotlight
 
-> **"Apple cannot check it for malicious software"** — this is expected. The app is not yet notarized. Right-click → Open bypasses this warning.
+> **"Apple cannot check it for malicious software"** — expected for an unsigned app. Right-click → Open bypasses this.
+
+> **"MemoryOS is damaged and can't be opened"** — macOS quarantined the file during download. Run this in Terminal, then try again:
+> ```
+> xattr -c ~/Downloads/MemoryOS_0.1.0_aarch64.dmg
+> ```
 
 ---
 
 ## How to Use
 
 ### 1. Scan a folder
-Type a folder path in the top bar or click **Browse**. Start with your home folder (`/Users/yourname`) for the full picture. Large folders take a moment — the scan runs in the background.
+Type a folder path in the top bar or click **Browse** to pick one with Finder. Hit **Analyze**. Start with your home folder (`/Users/yourname`) for the full picture. Large folders take a moment — the scan runs in the background.
 
 ### 2. Dashboard
-- Storage breakdown by category
-- Largest folders
-- Duplicate files grouped by wasted space
-- Cleanup recommendations with risk levels (Safe / Review / Caution)
+Overview of your scan: total files, duplicate groups, recommendation count, and a storage breakdown by category (Documents, Media, Developer files, etc.).
 
-### 3. Duplicates
-Lists every group of identical files found in your scan. Trash individual files — they go to Trash, not permanent delete.
+### 3. Folders
+Shows the largest files and subdirectories inside your scanned folder, so you can find what's eating the most space.
 
-### 4. System Data
-Shows what's inside `~/Library`: caches, logs, containers, app support, Messages attachments, and apps you haven't opened in over a year.
+### 4. Duplicates
+Lists every group of identical files found in your scan, grouped by wasted space. Trash individual files — they go to Trash, not permanent delete.
 
-### 5. AI Chat
+### 5. Recommendations
+Cleanup suggestions with a risk level for each item (Safe / Review / Caution).
+
+### 6. System Data
+Shows apps you haven't opened in 30+ days, and APFS Time Machine local snapshots that can be safely removed.
+
+### 7. Ask AI
 Ask anything about your storage in plain English:
 - *"What's taking up the most space?"*
 - *"Do I have large video files in Downloads?"*
